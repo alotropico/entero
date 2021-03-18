@@ -1,0 +1,56 @@
+name: entero
+description: A theme based on Radix.
+screenshot: screenshot.png
+core_version_requirement: ^8.7.7 || ^9.0
+# version: VERSION
+engine: twig
+type: theme
+base theme: radix
+
+
+regions:
+  navbar_branding: Navbar branding
+  navbar_left:  Navbar left
+  navbar_right: Navbar right
+  header: Header
+  content: Content
+  page_bottom: Page bottom
+  footer: Footer
+
+libraries:
+  - radix/style
+  - entero/style
+
+libraries-override:
+  radix/bootstrap: false
+
+  core/drupal.dialog.off_canvas:
+    css:
+      base:
+        misc/dialog/off-canvas.base.css: false
+        misc/dialog/off-canvas.reset.css: false
+        misc/dialog/off-canvas.css: false
+        misc/dialog/off-canvas.theme.css: false
+      component:
+        misc/dialog/off-canvas.button.css: false
+        misc/dialog/off-canvas.details.css: false
+        misc/dialog/off-canvas.dropbutton.css: false
+        misc/dialog/off-canvas.form.css: false
+        misc/dialog/off-canvas.layout.css: false
+        misc/dialog/off-canvas.motion.css: false
+        misc/dialog/off-canvas.table.css: false
+        misc/dialog/off-canvas.tabledrag.css: false
+
+ckeditor_stylesheets:
+  - assets/css/entero.style.css
+
+component-libraries:
+  entero:
+    paths:
+      - ./src/components
+        
+
+# Information added by Drupal.org packaging script on 2020-09-30
+version: '8.x-4.10'
+project: 'radix'
+datestamp: 1601449011

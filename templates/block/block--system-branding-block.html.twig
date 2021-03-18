@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Template for the branding block.
+ */
+#}
+{% embed '@radix/block/block.twig' with {
+  html_tag: 'div',
+} %}
+
+{% block content %}
+  {% include '@entero/navbar/navbar-brand.twig' with {
+    text: false,
+    image: site_logo,
+    width: 80,
+    height: 'auto',
+    path: path('<front>'),
+    alt: elements.content.site_name['#markup'] ~ ' logo',
+    title: site_name,
+  } %}
+{% endblock %}
+
+{% endembed %}

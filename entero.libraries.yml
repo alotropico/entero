@@ -1,0 +1,10 @@
+style:
+  version: VERSION
+  css:
+    theme:
+      assets/css/entero.style.css: {}
+  js:
+    assets/js/entero.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

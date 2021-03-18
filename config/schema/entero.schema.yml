@@ -1,0 +1,5 @@
+# Schema for the configuration files of the entero theme.
+
+entero.settings:
+  type: theme_settings
+  label: 'entero settings'
