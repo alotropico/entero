@@ -1,5 +1,24 @@
 // Page: Footer
 // -----------------------------------------------------------------------------
 .page__footer {
-
+    padding: $m*3 0;
+    font-size: $font-size-sm;
+    p {
+        margin-bottom: 0;
+    }
+    .container {
+        & > .block {
+            margin-top: $m;
+            &:first-child {
+                margin-top: 0;
+            }
+            @include media-breakpoint-up(md) {
+                margin-top: 0;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            display: flex;
+            justify-content: space-between;  
+        }
+    } 
 }

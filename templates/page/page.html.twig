@@ -7,7 +7,7 @@
 <div class="page">
   {% embed '@radix/navbar/navbar.twig' with {
     placement: 'sticky-top',
-    container: '',
+    container: 'fixed',
     color: 'light',
     utility_classes: ['bg-white shadow-sm'],
   } %}
@@ -44,17 +44,17 @@
 
     {% if page.content %}
       <div class="page__content">
-        {{ page.content }}
+        <div class="container">
+          {{ page.content }}
+        </div>
       </div>
     {% endif %}
   </main>
 
   {% if page.footer %}
-    <footer class="page__footer bg-dark">
+    <footer class="page__footer bg-dark text-light">
       <div class="container">
-        <div class="d-flex justify-content-md-between align-items-md-center">
-          {{ page.footer }}
-        </div>
+        {{ page.footer }}
       </div>
     </footer>
   {% endif %}

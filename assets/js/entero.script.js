@@ -18091,12 +18091,62 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(function () {
+(function ($) {
   'use strict';
 
-  Drupal.behaviors.helloWorld = {
+  Drupal.behaviors.sameHeight = {
     attach: function attach(context) {
-      console.log('Hello World');
+      $(window).on('resize', function () {
+        resize();
+      });
+      $(document).ready(function () {
+        setTimeout(function () {
+          resize();
+        }, 500);
+      });
+      resize();
+    }
+  };
+  var resizeSets = ['.feature .basic__body', '.products .card-body', '.products .card-body h5', '.products .card-body p'];
+
+  function resize() {
+    resizeSets.forEach(function (x) {
+      $(x).css('height', 'auto');
+      var h = 0;
+      $(x).each(function () {
+        var hh = $(this).outerHeight();
+
+        if (h < hh) {
+          h = hh;
+        }
+      });
+      if (h) $(x).css('height', h);
+    });
+  } // ** //
+
+
+  Drupal.behaviors.smoothScroll = {
+    attach: function attach(context) {
+      $(document).ready(function () {
+        $('nav .nav .nav-link').each(function () {
+          var link = $(this).attr('href');
+
+          if (link.indexOf('#') == 0) {
+            var obj = $(link);
+
+            if (!$(link).length) {
+              $(this).attr('href', '/' + link);
+            } else {
+              $(this).on('click', function (e) {
+                e.preventDefault();
+                $('html, body').stop().animate({
+                  scrollTop: obj.offset().top - $('nav').height()
+                }, 600, 'linear');
+              });
+            }
+          }
+        });
+      });
     }
   };
 })(jQuery, Drupal);

@@ -3,11 +3,19 @@
 h1, h2, h3, h4, h5, h6 {
 
 }
+h1.display-4 {
+  @extend .container;
+  margin: $m*4 auto $m;
+}
+h2 {
+  font-weight: 300;
+  margin: $m*4 $m;
+}
 
 // Text
 // -----------------------------------------------------------------------------
 p {
-
+  line-height: 1.4;
 }
 
 // Links
@@ -53,4 +61,10 @@ strong {
 
 small {
 
+}
+
+// Bootstrap components
+// -----------------------------------------------------------------------------
+.jumbotron {
+  padding: $m*2;
 }

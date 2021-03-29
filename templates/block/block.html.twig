@@ -4,8 +4,9 @@
  * Template for a block.
  */
 #}
+{% set newclass = elements['#configuration'].label|length? elements['#configuration'].label : 'no-label' %}
 
 {% include '@radix/block/block.twig' with {
   html_tag: 'div',
-  utility_classes: ['block--' ~ elements['#configuration'].label|replace({' ': ''})|lower],
+  utility_classes: ['block--' ~ newclass|replace({' ': ''})|lower],
 } %}
